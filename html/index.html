@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercícios HTML</title>
+    <link rel="shortcut icon" href="#">
+</head>
+<body>
+    <header>
+        <h1>Exercícios HTML</h1>
+    </header>
+    <nav>
+        <a href="exercicios/teste1.html" wm-nav> Teste 1</a>
+        <a href="exercicios/temp1.html" wm-nav> Teste 2</a>
+    </nav>
+    <section id="conteudo"></section>
+    <footer> 
+        <br> Curso de Web Moderno
+    </footer>
+    <script>
+        /* document.querySelectorAll('a').forEach(link => {
+            link.onclick = function(e) {
+                e.preventDefault()
+                console.log('teste')
+            }
+        }) */
+        document.querySelectorAll('a').forEach(link => {
+            const conteudo = document.getElementById('conteudo')
+            link.onclick = function(e){
+                e.preventDefault()
+                fetch(link.href)
+                    .then(resp => resp.text())
+                    .then(html => conteudo.innerHTML = html)
+            }
+        })
+    </script>
+</body>
+</html>
