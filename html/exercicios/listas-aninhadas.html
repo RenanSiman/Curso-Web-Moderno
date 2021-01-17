@@ -1,0 +1,56 @@
+<h1> Projeto </h1>
+<ul class="tree">
+    <li>
+        <span dir> Back-end </span>
+        <ul >
+            <li><span dir> App </span>
+                <ul>
+                    <li>projeto.js</li>
+                    <li>usuario.js</li>
+                    <li>venda.js</li>
+                </ul>
+            </li>
+            <li><span dir> Config </span>
+                <ul>
+                    <li>banco.js</li>
+                    <li>rotas.js</li>
+                    <li>servidor.js</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+    <li><span dir> Front-end </span>
+        <ul>
+            <li>
+                <span dir> Public </span>
+                <ul>
+                    <li>app.css</li>
+                    <li>app.js</li>
+                    <li>index.html</li>
+                </ul>
+            </li>
+        </ul>
+    </li>
+</ul>
+
+<link rel="stylesheet" href="http://files.cod3r.com.br/curso-web/tree.css">
+
+<script>
+    
+    document.querySelectorAll('[dir]').forEach(folder => {
+        folder.onclick = function(e){
+            const ul = folder.nextElementSibling
+            const disp = ul.style.display
+            ul.style.display = disp === 'none' ? 'block' : 'none'
+        }
+    })
+
+    /* var toggler = document.getElementsByClassName("caret"); // toggler = alternador
+    var i;
+
+    for (i = 0; i < toggler.length; i++) {
+    toggler[i].onclick = function() {
+        this.parentElement.querySelector(".nested").classList.toggle("active");
+        this.classList.toggle("caret-down");
+    };}  */
+</script>
