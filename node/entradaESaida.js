@@ -8,10 +8,11 @@ if(anonimo) {
     process.stdout.write('Deu certo...\n')
     process.exit()
 } else {
-    process.stdout.write('Informe seu nome:')
+    process.stdout.write('Informe seu nome: ')
     process.stdin.on('data', data => {
-        const nome = data.toString().replace('\n', '')
-        process.stdout.write(  `Olá sr(a) ${nome}!!\n`)
+        const nome = data.toString().replace('\n','')
+        
+        process.stdout.write(`Kole ${nome}\n`)
         process.exit()
     })
 }
